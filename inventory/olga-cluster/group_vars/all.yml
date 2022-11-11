@@ -4,6 +4,6 @@ ansible_user: k3s
 systemd_dir: /etc/systemd/system
 master_ip: "192.168.50.100"
 #master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }}"
-extra_ha_server_args: "--token=$K3S_TOKEN --tls-san kube.thehague.tk --tls-san 192.168.50.100"
+extra_ha_server_args: "--token=$K3S_TOKEN --tls-san kube.thehague.tk --tls-san 192.168.50.100 --server https://192.168.50.10:6443"
 extra_server_args: "--token-$K3S_TOKEN --tls-san kube.thehague.tk --tls-san 192.168.50.100 --cluster-init"
 extra_agent_args: ""
