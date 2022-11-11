@@ -1,5 +1,9 @@
 ---
 
+- name: Pause for 2 minutes while main server API comes up
+  ansible.builtin.pause:
+    minutes: 2
+
 - name: Copy K3s service file
   register: k3s_service
   template:
