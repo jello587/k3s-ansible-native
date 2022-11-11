@@ -13,6 +13,11 @@
   roles:
     - role: k3s/master
 
+- hosts: master_ha
+  become: yes
+  roles:
+    - role: k3s/master_ha
+
 - hosts: node
   become: yes
   roles:
